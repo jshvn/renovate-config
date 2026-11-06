@@ -1,0 +1,10 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "The Renovate policy every jshvn repository extends: each update opens as a pull request on Monday morning, assigned to jshvn, with no cap on how many open at once",
+  "extends": ["config:recommended"],
+  "timezone": "America/Los_Angeles",
+  "schedule": ["before 8am on monday"],
+  "assignees": ["jshvn"],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0
+}
