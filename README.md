@@ -33,6 +33,9 @@ a rule for a package whose every release is reviewed one at a time:
   (Renovate's `assignAutomerge` default).
 - **No caps.** `prHourlyLimit` and `prConcurrentLimit` are 0, so every due update is an open
   pull request and nothing waits on the Dependency Dashboard as rate-limited.
+- **Versions in a Dockerfile.** `customManagers:dockerfileVersions`: a version held in an `ARG`
+  or `ENV` is updated when the line above it says where it comes from, for example
+  `# renovate: datasource=github-releases depName=go-task/task`.
 
 `default.json` is the preset; `renovate.json` is this repository's own config, which extends it
 and keeps the action pin in the check current.
