@@ -1,9 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "description": "The Renovate policy every jshvn repository extends: each update opens as a pull request on Monday morning, assigned to jshvn, with no cap on how many open at once",
-  "extends": ["config:recommended"],
+  "description": "The Renovate policy every jshvn repository extends: Renovate's best practices, every non-major update in one Monday pull request per repository, a release taken only once it is three days old, every pull request assigned to jshvn, no cap on how many are open",
+  "extends": ["config:best-practices", "group:allNonMajor", "customManagers:dockerfileVersions"],
   "timezone": "America/Los_Angeles",
   "schedule": ["before 8am on monday"],
+  "lockFileMaintenance": { "schedule": ["before 8am on monday"] },
+  "minimumReleaseAge": "3 days",
+  "minimumReleaseAgeBehaviour": "timestamp-optional",
   "assignees": ["jshvn"],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0
